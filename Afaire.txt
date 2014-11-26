@@ -1,0 +1,29 @@
+______________________
+
+CE QU'IL RESTE A FAIRE
+______________________
+
+- Enlever le bouton Effacer (Easy, mais j'attend qu'on finisse les menus contextuelles)
+- Remplacer le choix des heures dans DLGEvent_form
+- Faire fonctionner la slidebar comme il faut ;P 
+- Identifier par couleur distincte la journée et l'heure actuel
+- Reglage de taille et de position dans settings
+- Menus contextuelles 
+	- Evenement
+		~ Modifier
+		~ Effacer
+		~ Dupliquer
+		~ Reporter d'une semaine
+	- Fond de la vue de la semaine courante
+		~ Couleur de fond
+		~ Couleur de ligne
+			- Horizontales des heures et des 1/2 heures
+			- Verticales
+		~ Police et couleur de caractères des événements
+	- Fond de l'entête des jours
+		~ Choix de la date de la semaine courante
+		~ Couleur de fond
+		~ Police et couleur de caractères
+	- Fond entete des heures
+		~ Couleur de fond
+		~ Police et couleur de caractères
