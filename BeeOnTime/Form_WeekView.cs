@@ -55,9 +55,9 @@ namespace Compact_Agenda
             ConnexionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='" + DB_URL + "';Integrated Security=True";
             CurrentWeek = DateTime.Now;
             PN_Hours.Height = PN_Content.Height = 2400;
-            this.UCS_HauteurCase.Maximum = 1;
-            this.UCS_HauteurCase.Minimum = -35;
-            this.UCS_HauteurCase.Value = -9;
+            this.UCS_HauteurCase.Maximum = 100;
+            this.UCS_HauteurCase.Minimum = 0;
+            this.UCS_HauteurCase.Value = 1;
 
         }
         private void Form_WeekView_Load(object sender, EventArgs e)

@@ -62,8 +62,11 @@ namespace Compact_Agenda
                 TBX_Description.Text = Event.Description;
                 blockUpdate = true;
                 DTP_Date.Value = Klone(Event.Starting);
-                DTP_Starting.Value = Klone(Event.Starting);
-                DTP_Ending.Value = Klone(Event.Ending);
+                MessageBox.Show(Event.Ending.ToString());
+                NUD_HeureDebut.Value = Event.Starting.Hour;
+                NUD_MinuteDebut.Value = Event.Starting.Minute;
+                NUD_HeureFin.Value = Event.Ending.Hour;
+                NUD_MinuteFin.Value = Event.Ending.Minute;
                 blockUpdate = false;
             }
             else
@@ -100,28 +103,6 @@ namespace Compact_Agenda
             }
             return index;
         }
-        /*
-         *   int Index;
-                         switch (Event.TypeEvenement)
-                {
-                    case "Général": Index = 0;
-                        break;
-                    case "Travail": Index = 1;
-                        break;
-                    case "Loisir": Index = 2;
-                        break;
-                    case "Santé": Index = 3;
-                        break;
-                    case "Important": Index = 4;
-                        break;
-                    case "Autre": Index = 5;
-                        break;
-                    default: Index = 0;
-                        break;
-                }
-                CB_Type.SelectedIndex = Index;
-         */
-
 
         private void TBX_Title_TextChanged(object sender, EventArgs e)
         {
@@ -149,53 +130,6 @@ namespace Compact_Agenda
             }
         }
 
-        private void DTP_Date_ValueChanged(object sender, EventArgs e)
-        {
-            if (!blockUpdate)
-            {
-                Event.Starting = new DateTime(DTP_Date.Value.Year,
-                                                DTP_Date.Value.Month,
-                                                DTP_Date.Value.Day,
-                                                DTP_Starting.Value.Hour,
-                                                DTP_Starting.Value.Minute,
-                                                0);
-
-                Event.Ending = new DateTime(DTP_Date.Value.Year,
-                                            DTP_Date.Value.Month,
-                                            DTP_Date.Value.Day,
-                                            DTP_Ending.Value.Hour,
-                                            DTP_Ending.Value.Minute,
-                                            0);
-            }
-        }
-
-        private void DTP_Starting_ValueChanged(object sender, EventArgs e)
-        {
-            if (!blockUpdate)
-            {
-                Event.Starting = new DateTime(DTP_Date.Value.Year,
-                                                 DTP_Date.Value.Month,
-                                                 DTP_Date.Value.Day,
-                                                 DTP_Starting.Value.Hour,
-                                                 DTP_Starting.Value.Minute,
-                                                 0);
-            }
-        }
-
-        private void DTP_Ending_ValueChanged(object sender, EventArgs e)
-        {
-            if (!blockUpdate)
-            {
-
-                Event.Ending = new DateTime(DTP_Date.Value.Year,
-                                            DTP_Date.Value.Month,
-                                            DTP_Date.Value.Day,
-                                            DTP_Ending.Value.Hour,
-                                            DTP_Ending.Value.Minute,
-                                            0);
-            }
-        }
-
         private void BTN_Effacer_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Voulez vous vraiment effacer cet événement ?") == System.Windows.Forms.DialogResult.OK)
@@ -219,6 +153,58 @@ namespace Compact_Agenda
         private void CB_Type_SelectedIndexChanged(object sender, EventArgs e)
         {
             Event.TypeEvenement = CB_Type.Text;
+        }
+
+        private void NUD_MinuteFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Starting = new DateTime(DTP_Date.Value.Year,
+                                                DTP_Date.Value.Month,
+                                                DTP_Date.Value.Day,
+                                                Int32.Parse(NUD_HeureFin.Value.ToString()),
+                                                Int32.Parse(NUD_MinuteFin.Value.ToString()),
+                                                0);
+            }
+        }
+
+        private void NUD_HeureFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Starting = new DateTime(DTP_Date.Value.Year,
+                                                DTP_Date.Value.Month,
+                                                DTP_Date.Value.Day,
+                                                Int32.Parse(NUD_HeureFin.Value.ToString()),
+                                                Int32.Parse(NUD_MinuteFin.Value.ToString()),
+                                                0);
+            }
+        }
+
+        private void NUD_MinuteDebut_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Starting = new DateTime(DTP_Date.Value.Year,
+                                                DTP_Date.Value.Month,
+                                                DTP_Date.Value.Day,
+                                                Int32.Parse(NUD_HeureDebut.Value.ToString()),
+                                                Int32.Parse(NUD_MinuteDebut.Value.ToString()),
+                                                0);
+            }
+        }
+
+        private void NUD_HeureDebut_ValueChanged(object sender, EventArgs e)
+        {
+            if (!blockUpdate)
+            {
+                Event.Starting = new DateTime(DTP_Date.Value.Year,
+                                                DTP_Date.Value.Month,
+                                                DTP_Date.Value.Day,
+                                                Int32.Parse(NUD_HeureDebut.Value.ToString()),
+                                                Int32.Parse(NUD_MinuteDebut.Value.ToString()),
+                                                0);
+            }
         }
     }
 }
