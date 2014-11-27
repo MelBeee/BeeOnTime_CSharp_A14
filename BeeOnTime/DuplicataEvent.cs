@@ -26,5 +26,16 @@ namespace Compact_Agenda
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
+
+        private void DuplicataEvent_Load(object sender, EventArgs e)
+        {
+            this.Location = Properties.Settings.Default.PositionDuplicata;
+        }
+
+        private void DuplicataEvent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PositionDuplicata = this.Location;
+            Properties.Settings.Default.Save();
+        }
     }
 }

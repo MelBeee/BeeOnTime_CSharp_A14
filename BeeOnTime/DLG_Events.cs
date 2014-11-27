@@ -23,7 +23,7 @@ namespace Compact_Agenda
         private void DLG_Events_Load(object sender, EventArgs e)
         {
             delete = false;
-
+            this.Location = Properties.Settings.Default.PositionEvents;
             try
             {
                 CB_Type.SelectedIndex = TrouverIndex();
@@ -203,6 +203,12 @@ namespace Compact_Agenda
                                                 Int32.Parse(NUD_MinuteDebut.Value.ToString()),
                                                 0);
             }
+        }
+
+        private void DLG_Events_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PositionEvents = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }

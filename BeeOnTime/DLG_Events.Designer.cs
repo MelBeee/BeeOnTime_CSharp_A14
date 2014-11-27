@@ -249,7 +249,7 @@
             // BTN_Effacer
             // 
             this.BTN_Effacer.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.BTN_Effacer.Location = new System.Drawing.Point(216, 227);
+            this.BTN_Effacer.Location = new System.Drawing.Point(203, 6);
             this.BTN_Effacer.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.BTN_Effacer.Name = "BTN_Effacer";
             this.BTN_Effacer.Size = new System.Drawing.Size(55, 18);
@@ -287,10 +287,10 @@
             this.FB_Annuler.ImageDisable = global::Compact_Agenda.Properties.Resources.AnnulerDisable;
             this.FB_Annuler.ImageNeutral = global::Compact_Agenda.Properties.Resources.AnnulerNormal;
             this.FB_Annuler.ImageOver = global::Compact_Agenda.Properties.Resources.AnnulerHover;
-            this.FB_Annuler.Location = new System.Drawing.Point(141, 227);
+            this.FB_Annuler.Location = new System.Drawing.Point(143, 222);
             this.FB_Annuler.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.FB_Annuler.Name = "FB_Annuler";
-            this.FB_Annuler.Size = new System.Drawing.Size(71, 27);
+            this.FB_Annuler.Size = new System.Drawing.Size(85, 32);
             this.FB_Annuler.TabIndex = 63;
             this.FB_Annuler.Click += new System.EventHandler(this.FB_Annuler_Click);
             // 
@@ -302,10 +302,10 @@
             this.FB_Ajouter.ImageDisable = global::Compact_Agenda.Properties.Resources.AjouterDisable;
             this.FB_Ajouter.ImageNeutral = global::Compact_Agenda.Properties.Resources.AjouterNormal;
             this.FB_Ajouter.ImageOver = global::Compact_Agenda.Properties.Resources.AjouterHover;
-            this.FB_Ajouter.Location = new System.Drawing.Point(67, 227);
+            this.FB_Ajouter.Location = new System.Drawing.Point(54, 222);
             this.FB_Ajouter.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.FB_Ajouter.Name = "FB_Ajouter";
-            this.FB_Ajouter.Size = new System.Drawing.Size(71, 27);
+            this.FB_Ajouter.Size = new System.Drawing.Size(85, 32);
             this.FB_Ajouter.TabIndex = 62;
             this.FB_Ajouter.Click += new System.EventHandler(this.FB_Ajouter_Click);
             // 
@@ -340,9 +340,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximumSize = new System.Drawing.Size(296, 298);
+            this.MinimumSize = new System.Drawing.Size(296, 298);
             this.Name = "DLG_Events";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter/Modifier";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_Events_FormClosing);
             this.Load += new System.EventHandler(this.DLG_Events_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_MinuteFin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_HeureFin)).EndInit();

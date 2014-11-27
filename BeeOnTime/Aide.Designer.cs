@@ -64,7 +64,7 @@
             this.FB_Fermer.ImageNeutral = global::Compact_Agenda.Properties.Resources.FermerNormal;
             this.FB_Fermer.ImageOver = global::Compact_Agenda.Properties.Resources.FermerHover;
             this.FB_Fermer.Location = new System.Drawing.Point(442, 268);
-            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(89, 30);
             this.FB_Fermer.TabIndex = 26;
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(220)))), ((int)(((byte)(77)))));
-            this.ClientSize = new System.Drawing.Size(534, 302);
+            this.ClientSize = new System.Drawing.Size(534, 306);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.FB_Fermer);
             this.Controls.Add(this.label6);
@@ -170,10 +170,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(550, 340);
+            this.MinimumSize = new System.Drawing.Size(550, 340);
             this.Name = "Aide";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aide";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Aide_FormClosing);
+            this.Load += new System.EventHandler(this.Aide_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

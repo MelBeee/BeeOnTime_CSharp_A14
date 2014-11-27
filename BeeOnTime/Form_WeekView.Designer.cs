@@ -171,9 +171,10 @@
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "Form_WeekView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bee on Time...";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_WeekView_FormClosing);
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
-            this.Resize += new System.EventHandler(this.Form_WeekView_Resize);
             this.PN_Frame.ResumeLayout(false);
             this.PN_Scroll.ResumeLayout(false);
             this.ResumeLayout(false);

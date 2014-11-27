@@ -57,8 +57,6 @@ namespace Compact_Agenda
 
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
         {
-            // pour s'assurer que le mousewheel event sera intercepté
-
             PN_Scroll.Focus();
             UCS_HauteurCase.Visible = false;
         }
@@ -556,6 +554,7 @@ namespace Compact_Agenda
                 case Keys.F3:
                     ChoixDate dialog = new ChoixDate();
                     dialog.ShowDialog();
+                    MessageBox.Show(Properties.Settings.Default.DateCourante.ToString());
                     break;
             }
             bool result = base.ProcessCmdKey(ref msg, keyData);
@@ -590,8 +589,9 @@ namespace Compact_Agenda
             UCS_HauteurCase.Visible = false;
         }
 
-        private void Form_WeekView_Resize(object sender, EventArgs e)
+        private void Form_WeekView_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Properties.Settings.Default.PositionWeekView = this.Location;
             Properties.Settings.Default.SizeWeekView = this.Size;
             Properties.Settings.Default.Save();
         }

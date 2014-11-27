@@ -21,5 +21,16 @@ namespace Compact_Agenda
         {
             this.Close();
         }
+
+        private void Aide_Load(object sender, EventArgs e)
+        {
+            this.Location = Properties.Settings.Default.PositionAide;
+        }
+
+        private void Aide_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.PositionAide = this.Location;
+            Properties.Settings.Default.Save();
+        }
     }
 }
