@@ -26,7 +26,6 @@ namespace Compact_Agenda
 {
     public partial class Form_WeekView : Form
     {
-        int SliderPrecValeur = 0;
         public string ConnexionString;
         private DateTime _CurrentWeek;
         private Events Events = new Events();
