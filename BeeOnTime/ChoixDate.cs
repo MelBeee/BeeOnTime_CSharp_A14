@@ -20,6 +20,7 @@ namespace Compact_Agenda
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             Properties.Settings.Default.DateCourante = Cal_ChoixDate.SelectionStart;
+            Properties.Settings.Default.Save();
         }
 
         private void FB_Ajouter_Click(object sender, EventArgs e)
@@ -35,6 +36,10 @@ namespace Compact_Agenda
         private void ChoixDate_Load(object sender, EventArgs e)
         {
             this.Location = Properties.Settings.Default.PositionChoixDate;
+
+            Cal_ChoixDate.TitleBackColor = System.Drawing.Color.Blue;
+            Cal_ChoixDate.TrailingForeColor = System.Drawing.Color.Red;
+            Cal_ChoixDate.TitleForeColor = System.Drawing.Color.Yellow;
         }
 
         private void ChoixDate_FormClosing(object sender, FormClosingEventArgs e)

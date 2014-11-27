@@ -36,11 +36,17 @@
             // 
             // Cal_ChoixDate
             // 
+            this.Cal_ChoixDate.BackColor = System.Drawing.Color.Blue;
+            this.Cal_ChoixDate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.Cal_ChoixDate.Location = new System.Drawing.Point(16, 28);
             this.Cal_ChoixDate.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.Cal_ChoixDate.MaxSelectionCount = 1;
             this.Cal_ChoixDate.Name = "Cal_ChoixDate";
+            this.Cal_ChoixDate.ShowTodayCircle = false;
             this.Cal_ChoixDate.TabIndex = 2;
+            this.Cal_ChoixDate.TitleBackColor = System.Drawing.Color.Yellow;
+            this.Cal_ChoixDate.TitleForeColor = System.Drawing.Color.Red;
+            this.Cal_ChoixDate.TrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Cal_ChoixDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label1

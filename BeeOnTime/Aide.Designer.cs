@@ -63,7 +63,7 @@
             this.FB_Fermer.ImageDisable = global::Compact_Agenda.Properties.Resources.FermerDisable;
             this.FB_Fermer.ImageNeutral = global::Compact_Agenda.Properties.Resources.FermerNormal;
             this.FB_Fermer.ImageOver = global::Compact_Agenda.Properties.Resources.FermerHover;
-            this.FB_Fermer.Location = new System.Drawing.Point(442, 268);
+            this.FB_Fermer.Location = new System.Drawing.Point(438, 270);
             this.FB_Fermer.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Fermer.Name = "FB_Fermer";
             this.FB_Fermer.Size = new System.Drawing.Size(89, 30);
@@ -75,10 +75,10 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(220)))), ((int)(((byte)(77)))));
             this.label6.Font = new System.Drawing.Font("Lucida Console", 7.8F, System.Drawing.FontStyle.Italic);
-            this.label6.Location = new System.Drawing.Point(259, 140);
+            this.label6.Location = new System.Drawing.Point(273, 140);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 121);
+            this.label6.Size = new System.Drawing.Size(208, 132);
             this.label6.TabIndex = 25;
             this.label6.Text = resources.GetString("label6.Text");
             // 
@@ -90,10 +90,10 @@
             this.label5.Location = new System.Drawing.Point(173, 140);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 121);
+            this.label5.Size = new System.Drawing.Size(96, 132);
             this.label5.TabIndex = 24;
             this.label5.Text = "Control + Q -\r\nEscape -\r\nAlt + F4 -\r\nF1 -\r\nHaut -\r\nBas -\r\nGauche -\r\nDroite -\r\nPlu" +
-    "s -\r\nMoins -\r\nEspace -";
+    "s -\r\nMoins -\r\nEspace -\r\nF3 -";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4

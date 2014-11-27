@@ -552,14 +552,31 @@ namespace Compact_Agenda
                     dlg.ShowDialog(); 
                     break;
                 case Keys.F3:
-                    ChoixDate dialog = new ChoixDate();
-                    dialog.ShowDialog();
-                    MessageBox.Show(Properties.Settings.Default.DateCourante.ToString());
+                    MettreLaSemaineALaDateChoisi();
                     break;
             }
             bool result = base.ProcessCmdKey(ref msg, keyData);
             PN_Scroll.Focus();
             return result;
+        }
+
+        private void MettreLaSemaineALaDateChoisi()
+        {
+            ChoixDate dialog = new ChoixDate();
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                _CurrentWeek = Properties.Settings.Default.DateCourante;
+                GotoCurrentWeekCustom(Properties.Settings.Default.DateCourante);
+            }  
+        }
+
+        private void GotoCurrentWeekCustom(DateTime JourneeChoisi)
+        {
+            CurrentWeek = JourneeChoisi;
+            GetWeekEvents();
+            PN_Content.Refresh();
+            PN_DaysHeader.Refresh();
+            PN_Scroll.VerticalScroll.Value = Event.HourToPixel((int)Math.Max(DateTime.Now.Hour - 3, 0), 0, PN_Hours.Height);
         }
 
         private void FenetreInfo()
