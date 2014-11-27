@@ -51,6 +51,8 @@ namespace Compact_Agenda
         {
             PN_Scroll.Focus();
             GotoCurrentWeek();
+            this.Size = Properties.Settings.Default.SizeWeekView;
+            this.Location = Properties.Settings.Default.PositionWeekView;
         }
 
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
@@ -578,6 +580,12 @@ namespace Compact_Agenda
         private void PN_DaysHeader_MouseEnter(object sender, EventArgs e)
         {
             UCS_HauteurCase.Visible = false;
+        }
+
+        private void Form_WeekView_Resize(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SizeWeekView = this.Size;
+            Properties.Settings.Default.Save();
         }
     }
 }
