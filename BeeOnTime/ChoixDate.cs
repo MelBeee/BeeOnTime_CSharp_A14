@@ -36,10 +36,6 @@ namespace Compact_Agenda
         private void ChoixDate_Load(object sender, EventArgs e)
         {
             this.Location = Properties.Settings.Default.PositionChoixDate;
-
-            Cal_ChoixDate.TitleBackColor = System.Drawing.Color.Blue;
-            Cal_ChoixDate.TrailingForeColor = System.Drawing.Color.Red;
-            Cal_ChoixDate.TitleForeColor = System.Drawing.Color.Yellow;
         }
 
         private void ChoixDate_FormClosing(object sender, FormClosingEventArgs e)

@@ -37,7 +37,7 @@
             // Cal_ChoixDate
             // 
             this.Cal_ChoixDate.BackColor = System.Drawing.Color.Blue;
-            this.Cal_ChoixDate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Cal_ChoixDate.ForeColor = System.Drawing.Color.YellowGreen;
             this.Cal_ChoixDate.Location = new System.Drawing.Point(16, 28);
             this.Cal_ChoixDate.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.Cal_ChoixDate.MaxSelectionCount = 1;
