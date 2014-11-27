@@ -37,7 +37,6 @@
             this.FBTN_DecrementWeek = new FlashButton.FlashButton();
             this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.PN_Frame.SuspendLayout();
             this.PN_Scroll.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +47,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PN_Frame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(207)))), ((int)(((byte)(83)))));
-            this.PN_Frame.Controls.Add(this.label1);
             this.PN_Frame.Controls.Add(this.UCS_HauteurCase);
             this.PN_Frame.Controls.Add(this.PN_Scroll);
             this.PN_Frame.Controls.Add(this.FBTN_DecrementWeek);
@@ -163,15 +161,6 @@
             this.PN_DaysHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_DaysHeader_Paint);
             this.PN_DaysHeader.MouseEnter += new System.EventHandler(this.PN_DaysHeader_MouseEnter);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            // 
             // Form_WeekView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +174,6 @@
             this.Text = "Bee on Time...";
             this.Load += new System.EventHandler(this.Form_WeekView_Load);
             this.PN_Frame.ResumeLayout(false);
-            this.PN_Frame.PerformLayout();
             this.PN_Scroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -201,7 +189,6 @@
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private System.Windows.Forms.Panel PN_Frame;
         private UC_Slider.UC_Slider UCS_HauteurCase;
-        private System.Windows.Forms.Label label1;
 
     }
 }

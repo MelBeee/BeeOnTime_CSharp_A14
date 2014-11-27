@@ -585,18 +585,7 @@ namespace Compact_Agenda
 
         private void UCS_HauteurCase_ValueChanged(object sender, EventArgs e)
         {
-            //if (UCS_HauteurCase.Value > SliderPrecValeur)
-            //{
-            //    ZoomIn();
-            //    SliderPrecValeur = UCS_HauteurCase.Value;
-            //}
-            //else if (UCS_HauteurCase.Value < SliderPrecValeur)
-            //{
-            //    ZoomOut();
-            //    SliderPrecValeur = UCS_HauteurCase.Value;
-            //}
             zoom(UCS_HauteurCase.Value);
-            label1.Text = UCS_HauteurCase.Value.ToString();
         }
 
         private void PN_DaysHeader_MouseEnter(object sender, EventArgs e)
