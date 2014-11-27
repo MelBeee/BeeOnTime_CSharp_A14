@@ -118,85 +118,91 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ICON_Right_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Left_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ICON_Left_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_Left_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Left_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Left_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Left_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ICON_Right_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ICON_Right_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AjouterClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AjouterClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AjouterDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AjouterDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AjouterHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AjouterHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AjouterNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AjouterNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AnnulerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AnnulerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AnnulerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnnulerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AnnulerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AnnulerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AnnulerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AnnulerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AnnulerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AnnulerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bee_wallpaper_by_bucky10209-d53c8fz1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bee_wallpaper_by_bucky10209-d53c8fz1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DroiteClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DroiteClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DroiteHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DroiteHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DroiteNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DroiteNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FermerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FermerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FermerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FermerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Right_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnnulerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnnulerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FermerHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FermerHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FermerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FermerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ICON_Right_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GaucheClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GaucheClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FermerDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FermerDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DroiteHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DroiteHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AjouterDisable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AjouterDisable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DroiteClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DroiteClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DroiteNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DroiteNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GaucheHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GaucheHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FermerNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FermerNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Right_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Right_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnnulerClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AnnulerClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_Left_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_Left_Over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="large_bee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\large_bee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AjouterHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AjouterHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AjouterClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AjouterClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bee_wallpaper_by_bucky10209-d53c8fz1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bee_wallpaper_by_bucky10209-d53c8fz1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GaucheNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GaucheNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="large_bee2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\large_bee2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -62,7 +62,6 @@ namespace Compact_Agenda
                 TBX_Description.Text = Event.Description;
                 blockUpdate = true;
                 DTP_Date.Value = Klone(Event.Starting);
-                MessageBox.Show(Event.Ending.ToString());
                 NUD_HeureDebut.Value = Event.Starting.Hour;
                 NUD_MinuteDebut.Value = Event.Starting.Minute;
                 NUD_HeureFin.Value = Event.Ending.Hour;
@@ -72,7 +71,6 @@ namespace Compact_Agenda
             else
                 Event = new Event();
         }
-
 
         private int TrouverIndex()
         {

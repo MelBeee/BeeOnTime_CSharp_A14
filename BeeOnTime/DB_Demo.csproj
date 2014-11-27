@@ -71,6 +71,12 @@
     <Compile Include="Aide.Designer.cs">
       <DependentUpon>Aide.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChoixDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoixDate.Designer.cs">
+      <DependentUpon>ChoixDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="DLG_Events.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="DoubleBufferPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuplicataEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DuplicataEvent.Designer.cs">
+      <DependentUpon>DuplicataEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="Event.cs" />
     <Compile Include="Events.cs" />
@@ -94,8 +106,14 @@
     <EmbeddedResource Include="Aide.resx">
       <DependentUpon>Aide.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChoixDate.resx">
+      <DependentUpon>ChoixDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DLG_Events.resx">
       <DependentUpon>DLG_Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DuplicataEvent.resx">
+      <DependentUpon>DuplicataEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_WeekView.resx">
       <DependentUpon>Form_WeekView.cs</DependentUpon>
@@ -226,6 +244,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GaucheNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\large_bee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\large_bee2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

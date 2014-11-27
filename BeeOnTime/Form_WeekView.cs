@@ -549,6 +549,14 @@ namespace Compact_Agenda
                 case Keys.Escape:
                     this.Close();
                     break;
+                case Keys.F2:
+                    DuplicataEvent dlg = new DuplicataEvent();
+                    dlg.ShowDialog(); 
+                    break;
+                case Keys.F3:
+                    ChoixDate dialog = new ChoixDate();
+                    dialog.ShowDialog();
+                    break;
             }
             bool result = base.ProcessCmdKey(ref msg, keyData);
             PN_Scroll.Focus();
