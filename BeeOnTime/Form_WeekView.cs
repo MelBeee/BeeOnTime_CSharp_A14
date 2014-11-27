@@ -67,7 +67,7 @@ namespace Compact_Agenda
             // pour s'assurer que le mousewheel event sera intercepté
             
             PN_Scroll.Focus();
-            uC_Slider1.Visible = false;
+            UCS_HauteurCase.Visible = false;
         }
 
       
@@ -566,7 +566,7 @@ namespace Compact_Agenda
 
         private void PN_Hours_MouseEnter(object sender, EventArgs e)
         {
-            uC_Slider1.Visible = true;
+            UCS_HauteurCase.Visible = true;
         }
     }
 }

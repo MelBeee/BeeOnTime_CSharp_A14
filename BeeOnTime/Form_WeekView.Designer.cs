@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_WeekView));
             this.PN_Frame = new System.Windows.Forms.Panel();
-            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
-            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
-            this.uC_Slider1 = new UC_Slider.UC_Slider();
+            this.UCS_HauteurCase = new UC_Slider.UC_Slider();
             this.PN_Scroll = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Content = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Hours = new Compact_Agenda.DoubleBufferPanel();
+            this.FBTN_DecrementWeek = new FlashButton.FlashButton();
+            this.FBTN_IncrementWeek = new FlashButton.FlashButton();
             this.PN_DaysHeader = new Compact_Agenda.DoubleBufferPanel();
             this.PN_Frame.SuspendLayout();
             this.PN_Scroll.SuspendLayout();
@@ -47,7 +47,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PN_Frame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(207)))), ((int)(((byte)(83)))));
-            this.PN_Frame.Controls.Add(this.uC_Slider1);
+            this.PN_Frame.Controls.Add(this.UCS_HauteurCase);
             this.PN_Frame.Controls.Add(this.PN_Scroll);
             this.PN_Frame.Controls.Add(this.FBTN_DecrementWeek);
             this.PN_Frame.Controls.Add(this.FBTN_IncrementWeek);
@@ -57,52 +57,23 @@
             this.PN_Frame.Size = new System.Drawing.Size(743, 589);
             this.PN_Frame.TabIndex = 4;
             // 
-            // FBTN_DecrementWeek
+            // UCS_HauteurCase
             // 
-            this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.GaucheNormal;
-            this.FBTN_DecrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FBTN_DecrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.GaucheClick;
-            this.FBTN_DecrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.GaucheClick;
-            this.FBTN_DecrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.GaucheNormal;
-            this.FBTN_DecrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.GaucheHover;
-            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(3, 2);
-            this.FBTN_DecrementWeek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FBTN_DecrementWeek.Name = "FBTN_DecrementWeek";
-            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(32, 32);
-            this.FBTN_DecrementWeek.TabIndex = 2;
-            this.FBTN_DecrementWeek.Click += new System.EventHandler(this.FBTN_DecrementWeek_Click);
-            // 
-            // FBTN_IncrementWeek
-            // 
-            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.DroiteNormal;
-            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.DroiteClick;
-            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.DroiteClick;
-            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.DroiteNormal;
-            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.DroiteHover;
-            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(708, 2);
-            this.FBTN_IncrementWeek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
-            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
-            this.FBTN_IncrementWeek.TabIndex = 3;
-            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
-            // 
-            // uC_Slider1
-            // 
-            this.uC_Slider1.BarDisableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.BarDisableImage")));
-            this.uC_Slider1.BarEnableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.BarEnableImage")));
-            this.uC_Slider1.CursorDisableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorDisableImage")));
-            this.uC_Slider1.CursorEnableImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorEnableImage")));
-            this.uC_Slider1.CursorOverImage = ((System.Drawing.Image)(resources.GetObject("uC_Slider1.CursorOverImage")));
-            this.uC_Slider1.Location = new System.Drawing.Point(4, 35);
-            this.uC_Slider1.Maximum = 100;
-            this.uC_Slider1.Minimum = -100;
-            this.uC_Slider1.Name = "uC_Slider1";
-            this.uC_Slider1.Size = new System.Drawing.Size(34, 549);
-            this.uC_Slider1.TabIndex = 0;
-            this.uC_Slider1.Value = 0;
-            this.uC_Slider1.Visible = false;
+            this.UCS_HauteurCase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.UCS_HauteurCase.BarDisableImage = ((System.Drawing.Image)(resources.GetObject("UCS_HauteurCase.BarDisableImage")));
+            this.UCS_HauteurCase.BarEnableImage = ((System.Drawing.Image)(resources.GetObject("UCS_HauteurCase.BarEnableImage")));
+            this.UCS_HauteurCase.CursorDisableImage = ((System.Drawing.Image)(resources.GetObject("UCS_HauteurCase.CursorDisableImage")));
+            this.UCS_HauteurCase.CursorEnableImage = ((System.Drawing.Image)(resources.GetObject("UCS_HauteurCase.CursorEnableImage")));
+            this.UCS_HauteurCase.CursorOverImage = ((System.Drawing.Image)(resources.GetObject("UCS_HauteurCase.CursorOverImage")));
+            this.UCS_HauteurCase.Location = new System.Drawing.Point(4, 35);
+            this.UCS_HauteurCase.Maximum = 100;
+            this.UCS_HauteurCase.Minimum = -100;
+            this.UCS_HauteurCase.Name = "UCS_HauteurCase";
+            this.UCS_HauteurCase.Size = new System.Drawing.Size(34, 549);
+            this.UCS_HauteurCase.TabIndex = 0;
+            this.UCS_HauteurCase.Value = 0;
+            this.UCS_HauteurCase.Visible = false;
             // 
             // PN_Scroll
             // 
@@ -146,6 +117,37 @@
             this.PN_Hours.Paint += new System.Windows.Forms.PaintEventHandler(this.PN_Hours_Paint);
             this.PN_Hours.MouseEnter += new System.EventHandler(this.PN_Hours_MouseEnter);
             // 
+            // FBTN_DecrementWeek
+            // 
+            this.FBTN_DecrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.GaucheNormal;
+            this.FBTN_DecrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_DecrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.GaucheClick;
+            this.FBTN_DecrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.GaucheClick;
+            this.FBTN_DecrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.GaucheNormal;
+            this.FBTN_DecrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.GaucheHover;
+            this.FBTN_DecrementWeek.Location = new System.Drawing.Point(3, 2);
+            this.FBTN_DecrementWeek.Margin = new System.Windows.Forms.Padding(4);
+            this.FBTN_DecrementWeek.Name = "FBTN_DecrementWeek";
+            this.FBTN_DecrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_DecrementWeek.TabIndex = 2;
+            this.FBTN_DecrementWeek.Click += new System.EventHandler(this.FBTN_DecrementWeek_Click);
+            // 
+            // FBTN_IncrementWeek
+            // 
+            this.FBTN_IncrementWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FBTN_IncrementWeek.BackgroundImage = global::Compact_Agenda.Properties.Resources.DroiteNormal;
+            this.FBTN_IncrementWeek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FBTN_IncrementWeek.ImageClick = global::Compact_Agenda.Properties.Resources.DroiteClick;
+            this.FBTN_IncrementWeek.ImageDisable = global::Compact_Agenda.Properties.Resources.DroiteClick;
+            this.FBTN_IncrementWeek.ImageNeutral = global::Compact_Agenda.Properties.Resources.DroiteNormal;
+            this.FBTN_IncrementWeek.ImageOver = global::Compact_Agenda.Properties.Resources.DroiteHover;
+            this.FBTN_IncrementWeek.Location = new System.Drawing.Point(708, 2);
+            this.FBTN_IncrementWeek.Margin = new System.Windows.Forms.Padding(4);
+            this.FBTN_IncrementWeek.Name = "FBTN_IncrementWeek";
+            this.FBTN_IncrementWeek.Size = new System.Drawing.Size(32, 32);
+            this.FBTN_IncrementWeek.TabIndex = 3;
+            this.FBTN_IncrementWeek.Click += new System.EventHandler(this.FBTN_IncrementWeek_Click);
+            // 
             // PN_DaysHeader
             // 
             this.PN_DaysHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(207)))), ((int)(((byte)(83)))));
@@ -184,7 +186,7 @@
         private FlashButton.FlashButton FBTN_DecrementWeek;
         private FlashButton.FlashButton FBTN_IncrementWeek;
         private System.Windows.Forms.Panel PN_Frame;
-        private UC_Slider.UC_Slider uC_Slider1;
+        private UC_Slider.UC_Slider UCS_HauteurCase;
 
     }
 }
