@@ -26,6 +26,7 @@ namespace Compact_Agenda
 {
     public partial class Form_WeekView : Form
     {
+        int SliderPrecValeur = 0;
         public string ConnexionString;
         private DateTime _CurrentWeek;
         private Events Events = new Events();
@@ -37,8 +38,8 @@ namespace Compact_Agenda
 
         public DateTime CurrentWeek
         {
-            set 
-            { 
+            set
+            {
                 // calculer la date du dimanche de la semaine courante
                 _CurrentWeek = value.AddDays(-(int)value.DayOfWeek);
             }
@@ -54,6 +55,9 @@ namespace Compact_Agenda
             ConnexionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename='" + DB_URL + "';Integrated Security=True";
             CurrentWeek = DateTime.Now;
             PN_Hours.Height = PN_Content.Height = 2400;
+            this.UCS_HauteurCase.Maximum = 1;
+            this.UCS_HauteurCase.Minimum = -35;
+            this.UCS_HauteurCase.Value = -9;
 
         }
         private void Form_WeekView_Load(object sender, EventArgs e)
@@ -65,12 +69,12 @@ namespace Compact_Agenda
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
         {
             // pour s'assurer que le mousewheel event sera intercepté
-            
+
             PN_Scroll.Focus();
             UCS_HauteurCase.Visible = false;
         }
 
-      
+
         private void GetWeekEvents()
         {
             TableEvents tableEvents = new TableEvents(ConnexionString);
@@ -97,7 +101,7 @@ namespace Compact_Agenda
             pen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             for (int hour = 0; hour < 24; hour++)
             {
-                DC.DrawLine(pen1, 0, Event.HourToPixel(hour + 1,  0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1,  0, PN_Hours.Height));
+                DC.DrawLine(pen1, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
                 DC.DrawLine(pen2, 0, Event.HourToPixel(hour + 1, 30, PN_Hours.Height), PN_Content.Width, Event.HourToPixel(hour + 1, 30, PN_Hours.Height));
             }
             Point location;
@@ -124,7 +128,7 @@ namespace Compact_Agenda
             string[] dayNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames;//[col].Substring(0, 3).ToUpper();
             Brush brush = new SolidBrush(Color.Black);
             Pen pen = new Pen(Color.Gray, 1);
-            for (int dayNum = 0; dayNum < 7; dayNum++) 
+            for (int dayNum = 0; dayNum < 7; dayNum++)
             {
                 location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
                 String headerText = dayNames[dayNum];
@@ -134,8 +138,8 @@ namespace Compact_Agenda
                 DC.DrawString(headerDate, PN_DaysHeader.Font, brush, location.X, location.Y + 14);
                 date = date.AddDays(1);
             }
-            location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0); 
-            DC.DrawLine(pen, location.X-1, 0, location.X-1, PN_DaysHeader.Height);
+            location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0);
+            DC.DrawLine(pen, location.X - 1, 0, location.X - 1, PN_DaysHeader.Height);
         }
 
         private void Fill_Hours_Header(Graphics DC)
@@ -145,9 +149,9 @@ namespace Compact_Agenda
             for (int hour = 0; hour <= 24; hour++)
             {
                 Point location = new Point(0, Event.HourToPixel(hour, 0, PN_Hours.Height));
-                String headerText = (hour < 10? "0": "") + hour.ToString() + ":00";
-                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location); 
-                DC.DrawLine(pen, 0,Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
+                String headerText = (hour < 10 ? "0" : "") + hour.ToString() + ":00";
+                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location);
+                DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
             }
         }
 
@@ -214,7 +218,7 @@ namespace Compact_Agenda
                         firstMouseLocation.Y =
                         lastMouseLocation.Y = RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height), minInterval);
                         break;
-                    default:  break;
+                    default: break;
                 }
             }
         }
@@ -263,7 +267,7 @@ namespace Compact_Agenda
             }
         }
 
-        private static DateTime Klone( DateTime x)
+        private static DateTime Klone(DateTime x)
         {
             return new DateTime(x.Year, x.Month, x.Day, x.Hour, x.Minute, 0);
         }
@@ -290,7 +294,7 @@ namespace Compact_Agenda
                                 Events.TargetEvent.Starting = Moving;
                             break;
                         case TargetPart.Bottom:
-                            
+
                             if (Moving < Events.TargetEvent.Starting)
                             {
                                 Events.TargetPart = TargetPart.Top;
@@ -305,10 +309,10 @@ namespace Compact_Agenda
                             Events.TargetEvent.Starting = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Starting.Hour, Events.TargetEvent.Starting.Minute, PN_Content.Height) + deltaY, minInterval)));
                             Events.TargetEvent.Ending = LocationToDateTime(new Point(e.Location.X, RoundToMinutes(Event.HourToPixel(Events.TargetEvent.Ending.Hour, Events.TargetEvent.Ending.Minute, PN_Content.Height) + deltaY, minInterval)));
                             AjustCurrentWeek();
-                            break; 
+                            break;
                         default: break;
                     }
-                    PN_Content.Refresh(); 
+                    PN_Content.Refresh();
                 }
                 else
                 {
@@ -328,7 +332,7 @@ namespace Compact_Agenda
         private DateTime LocationToDateTime(Point location)
         {
             DateTime date = new DateTime(_CurrentWeek.Year, _CurrentWeek.Month, _CurrentWeek.Day);
-            int adjust = (location.X < 0? (int)(PN_Content.Width / 7F) : 0);
+            int adjust = (location.X < 0 ? (int)(PN_Content.Width / 7F) : 0);
             int days = (int)(Math.Truncate((location.X - adjust) / (PN_Content.Width / 7F)));
 
             date = date.AddDays(days);
@@ -337,12 +341,12 @@ namespace Compact_Agenda
             Minutes = Minutes - Hours * 60;
             if (Minutes >= 60)
                 Minutes = 59;
-            return new DateTime(date.Year, date.Month, date.Day, Hours, Minutes, 0); 
+            return new DateTime(date.Year, date.Month, date.Day, Hours, Minutes, 0);
         }
-         
+
         private void ConludeMouseEvent()
         {
-           
+
             if (mouseIsDown)
             {
                 mouseIsDown = false;
@@ -386,7 +390,7 @@ namespace Compact_Agenda
                     TimeSpan delta = Event.Ending.Subtract(Event.Starting);
                     if (delta.Minutes < 30 && delta.Hours == 0)
                     {
-                         Event.Ending = Event.Starting + new TimeSpan(0, 30, 0);
+                        Event.Ending = Event.Starting + new TimeSpan(0, 30, 0);
                     }
                     dlg.Event = Event.Klone();
                     if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -398,7 +402,7 @@ namespace Compact_Agenda
                 GetWeekEvents();
                 PN_Content.Refresh();
             }
-            
+
         }
 
         private void PN_Content_MouseUp(object sender, MouseEventArgs e)
@@ -476,6 +480,14 @@ namespace Compact_Agenda
                     PN_Content.Refresh();
                 }
             }
+        }
+
+        private void zoom(int Valeur, int DeCombien = 200)
+        {
+            PN_Content.Height = Valeur * DeCombien;
+            PN_Hours.Height = Valeur * DeCombien;
+            PN_Content.Refresh();
+            PN_Hours.Refresh();
         }
 
         private void ZoomIn(int Valeur = 200)
@@ -567,6 +579,27 @@ namespace Compact_Agenda
         private void PN_Hours_MouseEnter(object sender, EventArgs e)
         {
             UCS_HauteurCase.Visible = true;
+        }
+
+        private void UCS_HauteurCase_ValueChanged(object sender, EventArgs e)
+        {
+            //if (UCS_HauteurCase.Value > SliderPrecValeur)
+            //{
+            //    ZoomIn();
+            //    SliderPrecValeur = UCS_HauteurCase.Value;
+            //}
+            //else if (UCS_HauteurCase.Value < SliderPrecValeur)
+            //{
+            //    ZoomOut();
+            //    SliderPrecValeur = UCS_HauteurCase.Value;
+            //}
+            zoom(UCS_HauteurCase.Value);
+            label1.Text = UCS_HauteurCase.Value.ToString();
+        }
+
+        private void PN_DaysHeader_MouseEnter(object sender, EventArgs e)
+        {
+            UCS_HauteurCase.Visible = false;
         }
     }
 }
