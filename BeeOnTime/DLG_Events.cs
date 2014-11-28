@@ -128,16 +128,6 @@ namespace Compact_Agenda
             }
         }
 
-        private void BTN_Effacer_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Voulez vous vraiment effacer cet événement ?") == System.Windows.Forms.DialogResult.OK)
-            {
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                delete = true;
-                this.Close();
-            }
-        }
-
         private void FB_Ajouter_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;

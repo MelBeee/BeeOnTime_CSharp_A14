@@ -44,7 +44,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.BTN_Effacer = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FB_Annuler = new FlashButton.FlashButton();
@@ -246,18 +245,6 @@
             this.label10.TabIndex = 79;
             this.label10.Text = ":";
             // 
-            // BTN_Effacer
-            // 
-            this.BTN_Effacer.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.BTN_Effacer.Location = new System.Drawing.Point(203, 6);
-            this.BTN_Effacer.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.BTN_Effacer.Name = "BTN_Effacer";
-            this.BTN_Effacer.Size = new System.Drawing.Size(55, 18);
-            this.BTN_Effacer.TabIndex = 64;
-            this.BTN_Effacer.Text = "Effacer";
-            this.BTN_Effacer.UseVisualStyleBackColor = true;
-            this.BTN_Effacer.Click += new System.EventHandler(this.BTN_Effacer_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Compact_Agenda.Properties.Resources.large_bee2;
@@ -329,7 +316,6 @@
             this.Controls.Add(this.CB_Type);
             this.Controls.Add(this.FB_Annuler);
             this.Controls.Add(this.FB_Ajouter);
-            this.Controls.Add(this.BTN_Effacer);
             this.Controls.Add(this.DTP_Date);
             this.Controls.Add(this.TBX_Description);
             this.Controls.Add(this.label3);
@@ -377,7 +363,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button BTN_Effacer;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
 

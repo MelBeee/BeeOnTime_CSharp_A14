@@ -141,7 +141,7 @@ namespace Compact_Agenda
             string time = TimeToString(Starting) + "-" + TimeToString(Ending);
 
             int fontSize = 10;
-            using (Font font = new Font(Properties.Settings.Default.MainFont.FontFamily,fontSize,FontStyle.Regular, GraphicsUnit.Point))
+            using (Font font = new Font(Properties.Settings.Default.MainFont.FontFamily, fontSize, FontStyle.Regular, GraphicsUnit.Point))
             {
                 using (Font font2 = new Font(Properties.Settings.Default.MainFont.FontFamily, fontSize + 1, FontStyle.Bold, GraphicsUnit.Point))
                 {

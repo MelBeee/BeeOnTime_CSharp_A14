@@ -7,3 +7,11 @@ C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime
 C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.csproj.GenerateResource.Cache
 C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.dll
 C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.pdb
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\bin\Debug\UC_Slider.dll
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\bin\Debug\UC_Slider.pdb
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\bin\Debug\BitmapUtilities.dll
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.ImageResource.resources
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.UC_Slider.resources
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.csproj.GenerateResource.Cache
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.dll
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.pdb
