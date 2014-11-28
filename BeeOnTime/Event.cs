@@ -141,11 +141,11 @@ namespace Compact_Agenda
             string time = TimeToString(Starting) + "-" + TimeToString(Ending);
 
             int fontSize = 10;
-            using (Font font = new Font("Papyrus", fontSize, FontStyle.Regular, GraphicsUnit.Point))
+            using (Font font = new Font(Properties.Settings.Default.MainFont.FontFamily,fontSize,FontStyle.Regular, GraphicsUnit.Point))
             {
-                using (Font font2 = new Font("Papyrus", fontSize + 1, FontStyle.Bold, GraphicsUnit.Point))
+                using (Font font2 = new Font(Properties.Settings.Default.MainFont.FontFamily, fontSize + 1, FontStyle.Bold, GraphicsUnit.Point))
                 {
-                    using (Font font3 = new Font("Papyrus", fontSize - 1, FontStyle.Italic, GraphicsUnit.Point))
+                    using (Font font3 = new Font(Properties.Settings.Default.MainFont.FontFamily, fontSize - 1, FontStyle.Italic, GraphicsUnit.Point))
                     {
                         System.Windows.Forms.TextFormatFlags flags = System.Windows.Forms.TextFormatFlags.WordEllipsis | System.Windows.Forms.TextFormatFlags.HorizontalCenter;
                         Rectangle border = GetBorder();

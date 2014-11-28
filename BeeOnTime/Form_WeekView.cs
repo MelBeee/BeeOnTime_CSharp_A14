@@ -48,16 +48,23 @@ namespace Compact_Agenda
 
         }
 
-        private void DefaultColor()
+        private void DefaultColorWeekView()
         {
-            //PN_Frame.BackColor = Color.FromArgb(238, 207, 83);
-            //PN_DaysHeader.BackColor = Color.FromArgb(238, 207, 83);
-            //PN_Hours.BackColor = Color.FromArgb(247, 247, 176);
-            //PN_Scroll.BackColor = Color.FromArgb(247, 247, 176);
-            //PN_Content.BackColor = Color.FromArgb(238, 238, 238);
-            Properties.Settings.Default.ColorWeekViewTop = Color.FromArgb(238, 207, 83);
-            Properties.Settings.Default.ColorWeekViewMain = Color.FromArgb(238, 238, 238);
-            Properties.Settings.Default.ColorWeekViewBackG = Color.FromArgb(247, 247, 176);
+            Properties.Settings.Default.ColorWeekViewTop = Color.Plum;
+            Properties.Settings.Default.ColorWeekViewMain = Color.PowderBlue;
+            Properties.Settings.Default.ColorWeekViewBackG = Color.Purple;
+            //Properties.Settings.Default.ColorWeekViewTop      = Color.FromArgb(238, 207, 83);
+            //Properties.Settings.Default.ColorWeekViewMain     = Color.FromArgb(238, 238, 238);
+            //Properties.Settings.Default.ColorWeekViewBackG    = Color.FromArgb(247, 247, 176);
+        }
+
+        private void LoadColorWeekView()
+        {
+            PN_Frame.BackColor      = Properties.Settings.Default.ColorWeekViewTop;
+            PN_DaysHeader.BackColor = Properties.Settings.Default.ColorWeekViewTop;
+            PN_Hours.BackColor      = Properties.Settings.Default.ColorWeekViewBackG;
+            PN_Scroll.BackColor     = Properties.Settings.Default.ColorWeekViewBackG;
+            PN_Content.BackColor    = Properties.Settings.Default.ColorWeekViewMain;
         }
 
         private void Form_WeekView_Load(object sender, EventArgs e)
@@ -66,14 +73,17 @@ namespace Compact_Agenda
             GotoCurrentWeek();
             this.Size = Properties.Settings.Default.SizeWeekView;
             this.Location = Properties.Settings.Default.PositionWeekView;
-            //Color
             
-            PN_Frame.BackColor = Properties.Settings.Default.ColorWeekViewTop;
-            PN_DaysHeader.BackColor = Properties.Settings.Default.ColorWeekViewTop;
-            PN_Hours.BackColor = Properties.Settings.Default.ColorWeekViewBackG;
-            PN_Scroll.BackColor=Properties.Settings.Default.ColorWeekViewBackG;
-            PN_Content.BackColor = Properties.Settings.Default.ColorWeekViewMain;
-            //DefaultColor();
+            //Color            
+            
+            DefaultColorWeekView();
+            LoadColorWeekView();
+            LoadFont();
+        }
+
+        private void LoadFont()
+        {
+            PN_Hours.Font = Properties.Settings.Default.DateFont;
         }
 
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
@@ -142,8 +152,8 @@ namespace Compact_Agenda
                 String headerText = dayNames[dayNum];
                 String headerDate = date.ToShortDateString();
                 DC.DrawLine(pen, location.X, 0, location.X, PN_DaysHeader.Height);
-                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location);
-                DC.DrawString(headerDate, PN_DaysHeader.Font, brush, location.X, location.Y + 14);
+                DC.DrawString(headerText, Properties.Settings.Default.DateFont, brush, location);
+                DC.DrawString(headerDate, Properties.Settings.Default.DateFont, brush, location.X, location.Y + 14);
                 date = date.AddDays(1);
             }
             location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0);
@@ -158,7 +168,7 @@ namespace Compact_Agenda
             {
                 Point location = new Point(0, Event.HourToPixel(hour, 0, PN_Hours.Height));
                 String headerText = (hour < 10 ? "0" : "") + hour.ToString() + ":00";
-                DC.DrawString(headerText, PN_DaysHeader.Font, brush, location);
+                DC.DrawString(headerText, Properties.Settings.Default.DateFont, brush, location);
                 DC.DrawLine(pen, 0, Event.HourToPixel(hour + 1, 0, PN_Hours.Height), PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height));
             }
         }

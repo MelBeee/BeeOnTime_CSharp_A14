@@ -4,3 +4,4 @@ C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime
 C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime\FlashButton\obj\Debug\FlashButton.csproj.GenerateResource.Cache
 C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime\FlashButton\obj\Debug\FlashButton.dll
 C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime\FlashButton\obj\Debug\FlashButton.pdb
+C:\Users\utilisateur\Documents\GitHub\TP3-Interface_BeeOnTime_Session3\BeeOnTime\FlashButton\obj\Debug\FlashButton.csprojResolveAssemblyReference.cache

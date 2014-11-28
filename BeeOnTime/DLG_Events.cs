@@ -28,7 +28,7 @@ namespace Compact_Agenda
             {
                 CB_Type.SelectedIndex = TrouverIndex();
             }
-            catch (Exception ex)
+            catch
             {
                 CB_Type.SelectedIndex = 0;
             }

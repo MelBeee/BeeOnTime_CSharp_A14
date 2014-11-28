@@ -164,5 +164,29 @@ namespace Compact_Agenda.Properties {
                 this["ColorWeekViewMain"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lucida Console, 9pt")]
+        public global::System.Drawing.Font DateFont {
+            get {
+                return ((global::System.Drawing.Font)(this["DateFont"]));
+            }
+            set {
+                this["DateFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Papyrus, 11.25pt, style=Bold, Italic")]
+        public global::System.Drawing.Font MainFont {
+            get {
+                return ((global::System.Drawing.Font)(this["MainFont"]));
+            }
+            set {
+                this["MainFont"] = value;
+            }
+        }
     }
 }
