@@ -29,5 +29,14 @@
     <Setting Name="PositionDuplicata" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">100, 100</Value>
     </Setting>
+    <Setting Name="ColorWeekViewTop" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">238, 207, 83</Value>
+    </Setting>
+    <Setting Name="ColorWeekViewBackG" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">247, 247, 176</Value>
+    </Setting>
+    <Setting Name="ColoWeekViewMain" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">238, 238, 238</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
