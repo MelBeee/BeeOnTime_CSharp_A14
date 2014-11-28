@@ -165,7 +165,7 @@
   <data name="UCS_HauteurCase.CursorDisableImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAA6CAYAAACnDemCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4zjOaXUAAAAWJJREFUWEfFzTFK
+        wgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4zjOaXUAAAAWJJREFUWEfFzTFK
         g0EURlFXkMW4I0V7QdfogkIgkGa0ufATDuIrHIvTfMy783A6nf4Fxx047sBxB447cNyB4w4c5Xa7Pa3P
         x/WTy+XyolvheG+t9aaP6PutGvc4HjH+C2odcYyCE2qGYxSbUDMco9iEmuEYxSbUDMcoNqFmOEaxCTXD
         MYpNqBmOUWxCzXCMYhNqhmMUm1AzHKPYhJrhGMUm1AzHKDahZjhGsQk1wzGKTagZjlFsQs1wjGITaoZj
@@ -178,7 +178,7 @@
   <data name="UCS_HauteurCase.CursorEnableImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAA6CAYAAACnDemCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4zjOaXUAAAARJJREFUWEftzUFK
+        wgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4zjOaXUAAAARJJREFUWEftzUFK
         w1AcBvFcwSMquhfsAb1DCIFcJYRaYRYuBum0pas38O3e//em0Wj09LZtez1/v5z/27Is7zx/TMdxfNpH
         tt+3nN2X4deM89sysAymZ1gZTM+wMpieYWUwPcPKYHqGlcH0DCuD6RlWBtMzrAymZ1gZTM+wMpieYWUw
         PcPKYHqGlcH0DCuD6RlWBtMzrAymZ1gZTM+wMpieYWUwPcPKYHqGlcH0DCuD6RlWBtMzrAymZ1gZTM+w
@@ -189,7 +189,7 @@
   <data name="UCS_HauteurCase.CursorOverImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAA6CAYAAACnDemCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4zjOaXUAAAAWFJREFUWEfFzTFK
+        wgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4zjOaXUAAAAWFJREFUWEfFzTFK
         g0EURlHbbMY9KdoLul03EQKBNKPNhZ9wEF/hWJzmY96dh9Pp9C847sBxB447cNyB4w4cd+Aot9vtaX0+
         rp9cLpcX3QrHe2utN31E32/VuMfxiPFfUOuIYxScUDMco9iEmuEYxSbUDMcoNqFmOEaxCTXDMYpNqBmO
         UWxCzXCMYhNqhmMUm1AzHKPYhJrhGMUm1AzHKDahZjhGsQk1wzGKTagZjlFsQs1wjGITaoZjFJtQMxyj

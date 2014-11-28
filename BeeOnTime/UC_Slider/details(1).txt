@@ -1,0 +1,3 @@
+190x30
+
+rajoute 3px chaque bord

@@ -104,7 +104,6 @@ namespace Compact_Agenda
 
         private void TBX_Title_TextChanged(object sender, EventArgs e)
         {
-            Event.Title = TBX_Title.Text;
             if (UpdateControls())
             {
                 FB_Ajouter.Enabled = false;
@@ -117,7 +116,6 @@ namespace Compact_Agenda
 
         private void TBX_Description_TextChanged(object sender, EventArgs e)
         {
-            Event.Description = TBX_Description.Text;
             if (UpdateControls())
             {
                 FB_Ajouter.Enabled = false;
@@ -131,11 +129,13 @@ namespace Compact_Agenda
         private void FB_Ajouter_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            Event.Description = TBX_Description.Text;
+            Event.Title = TBX_Title.Text;
         }
 
         private void FB_Annuler_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Close();
         }
 
         private void CB_Type_SelectedIndexChanged(object sender, EventArgs e)
