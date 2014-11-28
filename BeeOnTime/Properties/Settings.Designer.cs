@@ -156,12 +156,12 @@ namespace Compact_Agenda.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("238, 238, 238")]
-        public global::System.Drawing.Color ColoWeekViewMain {
+        public global::System.Drawing.Color ColorWeekViewMain {
             get {
-                return ((global::System.Drawing.Color)(this["ColoWeekViewMain"]));
+                return ((global::System.Drawing.Color)(this["ColorWeekViewMain"]));
             }
             set {
-                this["ColoWeekViewMain"] = value;
+                this["ColorWeekViewMain"] = value;
             }
         }
     }

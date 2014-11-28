@@ -35,7 +35,7 @@
     <Setting Name="ColorWeekViewBackG" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">247, 247, 176</Value>
     </Setting>
-    <Setting Name="ColoWeekViewMain" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="ColorWeekViewMain" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">238, 238, 238</Value>
     </Setting>
   </Settings>

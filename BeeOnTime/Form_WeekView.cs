@@ -47,12 +47,33 @@ namespace Compact_Agenda
             this.UCS_HauteurCase.Value = 12;
 
         }
+
+        private void DefaultColor()
+        {
+            //PN_Frame.BackColor = Color.FromArgb(238, 207, 83);
+            //PN_DaysHeader.BackColor = Color.FromArgb(238, 207, 83);
+            //PN_Hours.BackColor = Color.FromArgb(247, 247, 176);
+            //PN_Scroll.BackColor = Color.FromArgb(247, 247, 176);
+            //PN_Content.BackColor = Color.FromArgb(238, 238, 238);
+            Properties.Settings.Default.ColorWeekViewTop = Color.FromArgb(238, 207, 83);
+            Properties.Settings.Default.ColorWeekViewMain = Color.FromArgb(238, 238, 238);
+            Properties.Settings.Default.ColorWeekViewBackG = Color.FromArgb(247, 247, 176);
+        }
+
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
             PN_Scroll.Focus();
             GotoCurrentWeek();
             this.Size = Properties.Settings.Default.SizeWeekView;
             this.Location = Properties.Settings.Default.PositionWeekView;
+            //Color
+            
+            PN_Frame.BackColor = Properties.Settings.Default.ColorWeekViewTop;
+            PN_DaysHeader.BackColor = Properties.Settings.Default.ColorWeekViewTop;
+            PN_Hours.BackColor = Properties.Settings.Default.ColorWeekViewBackG;
+            PN_Scroll.BackColor=Properties.Settings.Default.ColorWeekViewBackG;
+            PN_Content.BackColor = Properties.Settings.Default.ColorWeekViewMain;
+            //DefaultColor();
         }
 
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
