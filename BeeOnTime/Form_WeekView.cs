@@ -8,7 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 #pragma warning disable 0108
+
+///////////////////////////////////////////////////////////////////
 //
+//      Modifié par Xavier Brosseau et Melissa Boucher
+//
+///////////////////////////////////////////////////////////////////
 
 namespace Compact_Agenda
 {
@@ -46,42 +51,64 @@ namespace Compact_Agenda
             this.UCS_HauteurCase.Maximum = 36;
             this.UCS_HauteurCase.Minimum = 2;
             this.UCS_HauteurCase.Value = 12;
+            this.Size = Properties.Settings.Default.SizeWeekView;
+            this.Location = Properties.Settings.Default.PositionWeekView;
+            //Color            
+            LoadEverything();
 
         }
+
+        // Couleur du thème de base 
         private void DefaultColorWeekView()
         {
-            Properties.Settings.Default.ColorWeekViewTop = Color.Plum;
-            Properties.Settings.Default.ColorWeekViewMain = Color.PowderBlue;
-            Properties.Settings.Default.ColorWeekViewBackG = Color.Purple;
-            //Properties.Settings.Default.ColorWeekViewTop      = Color.FromArgb(238, 207, 83);
-            //Properties.Settings.Default.ColorWeekViewMain     = Color.FromArgb(238, 238, 238);
-            //Properties.Settings.Default.ColorWeekViewBackG    = Color.FromArgb(247, 247, 176);
+            Font fontGeneral = new Font("Lucida Console", 8, FontStyle.Regular, GraphicsUnit.Point);
+            Font fontEvent = new Font("Papyrus", 9, FontStyle.Regular, GraphicsUnit.Point);
+            Properties.Settings.Default.DateFont = fontGeneral;
+            Properties.Settings.Default.MainFont = fontEvent;
+            Properties.Settings.Default.ColorWeekViewTop = Color.FromArgb(238, 207, 83);
+            Properties.Settings.Default.ColorWeekViewMain = Color.FromArgb(238, 238, 238);
+            Properties.Settings.Default.ColorWeekViewBackG = Color.FromArgb(247, 247, 176);
+            Properties.Settings.Default.ColorLignehorizontale = Color.Black;
+            Properties.Settings.Default.ColorLigneVerticale = Color.Black;
+            Properties.Settings.Default.ColorFont = Color.Black; 
+            Properties.Settings.Default.Save();
+            RefreshAllAndEverything();
         }
 
-        private void LoadColorWeekView()
+        // Load tout les settings dans les parametres necessaires
+        private void LoadEverything()
         {
             PN_Frame.BackColor = Properties.Settings.Default.ColorWeekViewTop;
             PN_DaysHeader.BackColor = Properties.Settings.Default.ColorWeekViewTop;
             PN_Hours.BackColor = Properties.Settings.Default.ColorWeekViewBackG;
             PN_Scroll.BackColor = Properties.Settings.Default.ColorWeekViewBackG;
             PN_Content.BackColor = Properties.Settings.Default.ColorWeekViewMain;
+            PN_Hours.Font = Properties.Settings.Default.DateFont;
+            PN_DaysHeader.Font = Properties.Settings.Default.DateFont;
+            PN_DaysHeader.ForeColor = Properties.Settings.Default.ColorFont;
+            PN_Hours.ForeColor = Properties.Settings.Default.ColorFont;
+            PN_Frame.ForeColor = Properties.Settings.Default.ColorFont;
+            PN_Scroll.ForeColor = Properties.Settings.Default.ColorFont;
+            PN_Content.ForeColor = Properties.Settings.Default.ColorFont;
+            this.Location = Properties.Settings.Default.PositionWeekView;
+            RefreshAllAndEverything();
         }
 
+        // refresh tout les panels
+        private void RefreshAllAndEverything()
+        {
+            PN_Content.Refresh();
+            PN_DaysHeader.Refresh();
+            PN_Frame.Refresh();
+            PN_Hours.Refresh();
+            PN_Scroll.Refresh();
+            this.Refresh();
+        }
+        
         private void Form_WeekView_Load(object sender, EventArgs e)
         {
             PN_Scroll.Focus();
-            GotoCurrentWeek();
-            this.Size = Properties.Settings.Default.SizeWeekView;
-            this.Location = Properties.Settings.Default.PositionWeekView;
-            //Color            
-
-            DefaultColorWeekView();
-            LoadColorWeekView();
-            LoadFont();
-        }
-        private void LoadFont()
-        {
-            PN_Hours.Font = Properties.Settings.Default.DateFont;
+            GotoCurrentWeek();  
         }
 
         private void PN_Scroll_MouseEnter(Object sender, EventArgs e)
@@ -112,8 +139,9 @@ namespace Compact_Agenda
         private void Fill_Agenda(Graphics DC)
         {
             Brush brush = new SolidBrush(Color.Black);
-            Pen pen1 = new Pen(Color.Gray, 1);
-            Pen pen2 = new Pen(Color.Gray, 1);
+            Pen pen1 = new Pen(Properties.Settings.Default.ColorLignehorizontale, 1);
+            Pen pen2 = new Pen(Properties.Settings.Default.ColorLignehorizontale, 1);
+            Pen pen3 = new Pen(Properties.Settings.Default.ColorLigneVerticale, 1);
             pen2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             for (int hour = 0; hour < 24; hour++)
             {
@@ -124,10 +152,10 @@ namespace Compact_Agenda
             for (int dayNum = 0; dayNum < 7; dayNum++)
             {
                 location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
-                DC.DrawLine(pen1, location.X, 0, location.X, PN_Content.Height);
+                DC.DrawLine(pen3, location.X, 0, location.X, PN_Content.Height);
             }
             location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * 7), 0);
-            DC.DrawLine(pen1, location.X - 1, 0, location.X - 1, PN_Content.Height);
+            DC.DrawLine(pen3, location.X - 1, 0, location.X - 1, PN_Content.Height);
             Events.Draw(DC);
             PN_Scroll.Focus();
         }
@@ -141,12 +169,13 @@ namespace Compact_Agenda
         {
             Point location;
             DateTime date = _CurrentWeek;
-            string[] dayNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames;//[col].Substring(0, 3).ToUpper();
-            Brush brush = new SolidBrush(Color.Black);
+            string[] dayNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.DayNames;
+            Brush brush = new SolidBrush( Properties.Settings.Default.ColorFont);
             Pen pen = new Pen(Color.Gray, 1);
             for (int dayNum = 0; dayNum < 7; dayNum++)
             {
                 location = new Point((int)Math.Round(PN_DaysHeader.Width / 7f * dayNum), 0);
+                // colore la journée courante 
                 if (DateTime.Parse(date.Date.ToShortDateString()) == DateTime.Parse(DateTime.Now.Date.ToShortDateString()))
                 {
                     Rectangle border = new Rectangle(location.X, location.Y, (int)Math.Round(PN_DaysHeader.Width / 7f * (dayNum + 1)) - location.X, PN_DaysHeader.Height);
@@ -154,7 +183,6 @@ namespace Compact_Agenda
                     {
                         DC.FillRectangle(B, border);
                     }
-
                 }
                 String headerText = dayNames[dayNum];
                 String headerDate = date.ToShortDateString();
@@ -169,15 +197,15 @@ namespace Compact_Agenda
 
         private void Fill_Hours_Header(Graphics DC)
         {
-            Brush brush = new SolidBrush(Color.Black);
+            Brush brush = new SolidBrush( Properties.Settings.Default.ColorFont);
             Pen pen = new Pen(Color.LightGray, 1);
             for (int hour = 0; hour <= 24; hour++)
             {
                 Point location = new Point(0, Event.HourToPixel(hour, 0, PN_Hours.Height));
+                // colore l'heure courante
                 if (DateTime.Now.Hour == hour)
                 {
                     Rectangle border = new Rectangle(location.X, location.Y, PN_Hours.Width, Event.HourToPixel(hour + 1, 0, PN_Hours.Height) - location.Y);
-
                     using (Brush B = new SolidBrush(Color.Orange))
                     {
                         DC.FillRectangle(B, border);
@@ -439,18 +467,20 @@ namespace Compact_Agenda
                 GetWeekEvents();
                 PN_Content.Refresh();
             }
-           //allo je suis par ici allo toi sa va moi oui et toi etoi toi toi oti toi otiotitoitoitoi
+
         }
 
         private void PN_Content_MouseUp(object sender, MouseEventArgs e)
         {
-            ConludeMouseEvent();
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
+                ConludeMouseEvent();
+            else if (e.Button == MouseButtons.Right)
             {
-                if ((Events.TargetEvent != null) && (Events.TargetPart == TargetPart.Inside))
-                {
+                Events.UpdateTarget(e.Location);
+                if (Events.TargetEvent != null)
                     CMS_Evenement.Show(Form_WeekView.MousePosition);
-                }
+                else
+                    CMS_FondSemaineCourante.Show(Form_WeekView.MousePosition);
             }
         }
 
@@ -458,27 +488,29 @@ namespace Compact_Agenda
         {
             _CurrentWeek = _CurrentWeek.AddDays(-7);
             GetWeekEvents();
-            PN_Content.Refresh();
-            PN_DaysHeader.Refresh();
         }
         private void Increment_Week()
         {
             _CurrentWeek = _CurrentWeek.AddDays(7);
             GetWeekEvents();
-            PN_Content.Refresh();
-            PN_DaysHeader.Refresh();
         }
         private void Increment_Month()
         {
             int currentMonth = CurrentWeek.Month;
             while (currentMonth == CurrentWeek.Month)
                 Decrement_Week();
+
+            PN_Content.Refresh();
+            PN_DaysHeader.Refresh();
         }
         private void Decrement_Month()
         {
             int month = CurrentWeek.AddDays(6).Month;
             while (month == CurrentWeek.AddDays(6).Month)
                 Increment_Week();
+
+            PN_Content.Refresh();
+            PN_DaysHeader.Refresh();
         }
 
         private void GotoCurrentWeek()
@@ -493,11 +525,15 @@ namespace Compact_Agenda
         private void FBTN_DecrementWeek_Click(object sender, EventArgs e)
         {
             Decrement_Week();
+            PN_Content.Refresh();
+            PN_DaysHeader.Refresh();
         }
 
         private void FBTN_IncrementWeek_Click(object sender, EventArgs e)
         {
             Increment_Week();
+            PN_Content.Refresh();
+            PN_DaysHeader.Refresh();
         }
 
         private void PN_Content_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -505,31 +541,7 @@ namespace Compact_Agenda
             AjouterModifierDLG();
         }
 
-        private void AjouterModifierDLG()
-        {
-            if ((Events.TargetEvent != null) && (Events.TargetPart == TargetPart.Inside))
-            {
-                DLG_Events dlg = new DLG_Events();
-                dlg.Event = Events.TargetEvent;
-                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    if (dlg.delete)
-                    {
-                        TableEvents tableEvents = new TableEvents(ConnexionString);
-                        tableEvents.DeleteEvent(dlg.Event);
-                        Events.TargetEvent = null;
-                        mouseIsDown = false;
-                    }
-                    else
-                    {
-                        TableEvents tableEvents = new TableEvents(ConnexionString);
-                        tableEvents.UpdateEventRecord(dlg.Event);
-                    }
-                    GetWeekEvents();
-                    PN_Content.Refresh();
-                }
-            }
-        }
+        // Methode utilisé pour zoomer 
         private void zoom(int Valeur, int DeCombien = 200)
         {
             PN_Content.Height = Valeur * DeCombien;
@@ -537,7 +549,7 @@ namespace Compact_Agenda
             PN_Content.Refresh();
             PN_Hours.Refresh();
         }
-
+        // Methode utilisé pour zoomer 
         private void ZoomIn(int Valeur = 200)
         {
             if (!mouseIsDown)
@@ -548,11 +560,11 @@ namespace Compact_Agenda
                     PN_Hours.Height += Valeur;
                     PN_Content.Refresh();
                     PN_Hours.Refresh();
-                    UCS_HauteurCase.Value++;
+                    UCS_HauteurCase.Value ++;
                 }
             }
         }
-
+        // Methode utilisé pour zoomer 
         private void ZoomOut(int Valeur = 200)
         {
             if (!mouseIsDown)
@@ -563,10 +575,12 @@ namespace Compact_Agenda
                     PN_Hours.Height -= Valeur;
                     PN_Content.Refresh();
                     PN_Hours.Refresh();
-                    UCS_HauteurCase.Value--;
+                    UCS_HauteurCase.Value --;
                 }
             }
         }
+
+        // Methode utilisé pour checker les keys press
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -578,6 +592,8 @@ namespace Compact_Agenda
                 case Keys.Right: // Incrémenter d'une semaine la semaine courrante
                     if (!mouseIsDown)
                         Increment_Week();
+                    PN_Content.Refresh();
+                    PN_DaysHeader.Refresh();
                     break;
                 case Keys.Oemplus:
                     // Fonction temporaire pour voir comment zommer
@@ -586,6 +602,8 @@ namespace Compact_Agenda
                 case Keys.Left: // Décrémenter d'une semaine la se maine courrante
                     if (!mouseIsDown)
                         Decrement_Week();
+                    PN_Content.Refresh();
+                    PN_DaysHeader.Refresh();
                     break;
                 case Keys.Space:
                     if (!mouseIsDown)
@@ -608,19 +626,21 @@ namespace Compact_Agenda
                 case Keys.Escape:
                     this.Close();
                     break;
-                case Keys.F2:
-                    DuplicataEvent dlg = new DuplicataEvent();
-                    dlg.ShowDialog();
-                    break;
                 case Keys.F3:
                     MettreLaSemaineALaDateChoisi();
                     break;
+                case Keys.F4:
+                    DefaultColorWeekView();
+                    LoadEverything();
+                    this.Refresh();
+                    break; 
             }
             bool result = base.ProcessCmdKey(ref msg, keyData);
             PN_Scroll.Focus();
             return result;
         }
 
+        // Methode pour changer la date courante a celle choisi
         private void MettreLaSemaineALaDateChoisi()
         {
             ChoixDate dialog = new ChoixDate();
@@ -628,9 +648,9 @@ namespace Compact_Agenda
             {
                 _CurrentWeek = Properties.Settings.Default.DateCourante;
                 GotoCurrentWeekCustom(Properties.Settings.Default.DateCourante);
-            }
+            }  
         }
-
+        // aller a la semaine courante (Space)
         private void GotoCurrentWeekCustom(DateTime JourneeChoisi)
         {
             CurrentWeek = JourneeChoisi;
@@ -640,6 +660,7 @@ namespace Compact_Agenda
             PN_Scroll.VerticalScroll.Value = Event.HourToPixel((int)Math.Max(DateTime.Now.Hour - 3, 0), 0, PN_Hours.Height);
         }
 
+        // ouverture de la fenetre d'information/aide F1
         private void FenetreInfo()
         {
             Aide dlg = new Aide();
@@ -681,7 +702,7 @@ namespace Compact_Agenda
 
         private void CMS_CouleurEnteteJournee_Click(object sender, EventArgs e)
         {
-
+            ChangerCouleur("FondJournee");
         }
 
         private void CMS_FontEnteteJournee_Click(object sender, EventArgs e)
@@ -692,6 +713,32 @@ namespace Compact_Agenda
         private void CMS_ModifierEvent_Click(object sender, EventArgs e)
         {
             AjouterModifierDLG();
+        }
+
+        private void AjouterModifierDLG()
+        {
+            if ((Events.TargetEvent != null) && (Events.TargetPart == TargetPart.Inside))
+            {
+                DLG_Events dlg = new DLG_Events();
+                dlg.Event = Events.TargetEvent;
+                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (dlg.delete)
+                    {
+                        TableEvents tableEvents = new TableEvents(ConnexionString);
+                        tableEvents.DeleteEvent(dlg.Event);
+                        Events.TargetEvent = null;
+                        mouseIsDown = false;
+                    }
+                    else
+                    {
+                        TableEvents tableEvents = new TableEvents(ConnexionString);
+                        tableEvents.UpdateEventRecord(dlg.Event);
+                    }
+                    GetWeekEvents();
+                    PN_Content.Refresh();
+                }
+            }
         }
 
         private void CMS_EffacerEvent_Click(object sender, EventArgs e)
@@ -724,50 +771,108 @@ namespace Compact_Agenda
             GetWeekEvents();
             this.Refresh();
         }
-
-        private void ChangerCouleurEntete()
+        // changer les couleurs passé en commentaire
+        private void ChangerCouleur(string EndroitCouleur)
         {
             Compact_Agenda.DLG_HLSColorPicker DialogDeCouleur = new Compact_Agenda.DLG_HLSColorPicker();
 
-            if (DialogDeCouleur.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            DialogDeCouleur.Text = EndroitCouleur;
+            
+            if(DialogDeCouleur.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-
+                switch(EndroitCouleur)
+                {
+                    case "LigneVerticale":
+                        Properties.Settings.Default.ColorLigneVerticale = DialogDeCouleur.color;
+                        break;
+                    case "LigneHorizontale":
+                        Properties.Settings.Default.ColorLignehorizontale = DialogDeCouleur.color; 
+                        break;
+                    case "FondEvent":
+                        Properties.Settings.Default.ColorWeekViewMain = DialogDeCouleur.color; 
+                        break;
+                    case "FondHeures":
+                        Properties.Settings.Default.ColorWeekViewBackG = DialogDeCouleur.color;
+                        break;
+                    case "FondJournee":
+                        Properties.Settings.Default.ColorWeekViewTop = DialogDeCouleur.color;
+                        break;
+                    case "CouleurFont":
+                        Properties.Settings.Default.ColorFont = DialogDeCouleur.color;
+                        break;
+                }
+                Properties.Settings.Default.Save();
             }
-
+            LoadEverything();
         }
-
+        // changer les polices choisis 
         private void ChangerlesPolicesEntete()
         {
             FontDialog dlg = new FontDialog();
 
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if(dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                // dlg.Font; 
-
+                Properties.Settings.Default.DateFont = dlg.Font;
+                Properties.Settings.Default.Save();
             }
+            ChangerCouleur("CouleurFont");
+            LoadEverything();
         }
-
+        // changer les polices choisis
         private void ChangerlesPolicesEvent()
         {
             FontDialog dlg = new FontDialog();
 
             if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                // dlg.Font; 
+                Properties.Settings.Default.MainFont = dlg.Font;
+                Properties.Settings.Default.Save();
             }
+            ChangerCouleur("CouleurFont");
+            LoadEverything();
         }
 
         private void CMS_DupliquerEvent_Click(object sender, EventArgs e)
         {
-            if (Events.TargetEvent != null)
+            DuplicataEvent dlg = new DuplicataEvent();
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
+                TableEvents tableEvents = new TableEvents(ConnexionString);
+                Events.UpdateTarget(PN_Content.PointToClient(new Point(CMS_Evenement.Left, CMS_Evenement.Top)));
+                Event clone = Events.TargetEvent.Klone();
 
+                for (int i = 0; i < dlg.GetNbFois(); i++)
+                {
+                    switch (dlg.GetInterval())
+                    {
+                        case "Jour":
+                            clone.Starting = clone.Starting.AddDays(1);
+                            clone.Ending = clone.Ending.AddDays(1);
+                            break;
+                        case "Semaine":
+                            clone.Starting = clone.Starting.AddDays(7);
+                            clone.Ending = clone.Ending.AddDays(7);
+                            break;
+                        case "Mois":
+                            clone.Starting = clone.Starting.AddMonths(1);
+                            clone.Ending = clone.Ending.AddMonths(1);
+                            break;
+                        case "Année":
+                            clone.Starting = clone.Starting.AddYears(1);
+                            clone.Ending = clone.Ending.AddYears(1);
+                            break;
+                    }
+                    tableEvents.AddEvent(clone);
+
+                }
+                GetWeekEvents();
+                this.Refresh();
             }
         }
 
         private void CMS_CouleurEnteteHeure_Click(object sender, EventArgs e)
         {
-
+            ChangerCouleur("FondHeures");
         }
 
         private void CMS_FontEnteteHeure_Click(object sender, EventArgs e)
@@ -777,7 +882,7 @@ namespace Compact_Agenda
 
         private void CMS_CouleurSemaine_Click(object sender, EventArgs e)
         {
-
+            ChangerCouleur("FondEvent");
         }
 
         private void CMS_FontSemaine_Click(object sender, EventArgs e)
@@ -787,17 +892,33 @@ namespace Compact_Agenda
 
         private void CMS_HorizontaleSemaine_Click(object sender, EventArgs e)
         {
-
+            ChangerCouleur("LigneHorizontale");
         }
 
         private void CMS_VerticalesSemaine_Click(object sender, EventArgs e)
         {
-
+            ChangerCouleur("LigneVerticale");
         }
 
         private void PN_Content_MouseClick(object sender, MouseEventArgs e)
         {
-
+           
         }
+
+        private void FBTN_DecrementWeek_MouseEnter(object sender, EventArgs e)
+        {
+            UCS_HauteurCase.Visible = false; 
+        }
+
+        private void PN_Scroll_MouseEnter_1(object sender, EventArgs e)
+        {
+            UCS_HauteurCase.Visible = false; 
+        }
+
+        private void PN_Frame_MouseEnter(object sender, EventArgs e)
+        {
+            UCS_HauteurCase.Visible = false; 
+        }
+
     }
 }

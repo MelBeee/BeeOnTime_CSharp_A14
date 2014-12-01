@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+///////////////////////////////////////////////////////////////////
+//
+//      Fait par Xavier Brosseau et Melissa Boucher
+//
+///////////////////////////////////////////////////////////////////
+
 namespace Compact_Agenda
 {
     public partial class Aide : Form

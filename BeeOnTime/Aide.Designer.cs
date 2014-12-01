@@ -92,8 +92,8 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 132);
             this.label5.TabIndex = 24;
-            this.label5.Text = "Control + Q -\r\nEscape -\r\nAlt + F4 -\r\nF1 -\r\nHaut -\r\nBas -\r\nGauche -\r\nDroite -\r\nPlu" +
-    "s -\r\nMoins -\r\nEspace -\r\nF3 -";
+            this.label5.Text = "Control + Q -\r\nEscape -\r\nF1 -\r\nHaut -\r\nBas -\r\nGauche -\r\nDroite -\r\nPlus -\r\nMoins -" +
+    "\r\nEspace -\r\nF3 -\r\nF4 -";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4

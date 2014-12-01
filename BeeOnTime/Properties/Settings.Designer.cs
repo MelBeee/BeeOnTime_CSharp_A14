@@ -167,7 +167,7 @@ namespace Compact_Agenda.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Lucida Console, 9pt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Lucida Console, 8pt")]
         public global::System.Drawing.Font DateFont {
             get {
                 return ((global::System.Drawing.Font)(this["DateFont"]));
@@ -179,13 +179,49 @@ namespace Compact_Agenda.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Papyrus, 11.25pt, style=Bold, Italic")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Papyrus, 8pt, style=Bold, Italic")]
         public global::System.Drawing.Font MainFont {
             get {
                 return ((global::System.Drawing.Font)(this["MainFont"]));
             }
             set {
                 this["MainFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color ColorLignehorizontale {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorLignehorizontale"]));
+            }
+            set {
+                this["ColorLignehorizontale"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color ColorLigneVerticale {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorLigneVerticale"]));
+            }
+            set {
+                this["ColorLigneVerticale"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color ColorFont {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorFont"]));
+            }
+            set {
+                this["ColorFont"] = value;
             }
         }
     }

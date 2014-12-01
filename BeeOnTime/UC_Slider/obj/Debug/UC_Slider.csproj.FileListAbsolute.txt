@@ -15,3 +15,13 @@ C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Sl
 C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.csproj.GenerateResource.Cache
 C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.dll
 C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.pdb
+C:\Users\201029426\Downloads\bloubloutp3\tp3\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.csprojResolveAssemblyReference.cache
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\bin\Debug\UC_Slider.dll
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\bin\Debug\UC_Slider.pdb
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\bin\Debug\BitmapUtilities.dll
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.csprojResolveAssemblyReference.cache
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.ImageResource.resources
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.UC_Slider.resources
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.csproj.GenerateResource.Cache
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.dll
+C:\Users\Mélissa\Downloads\MelissaBoucher_XavierBrosseau\BeeOnTime\UC_Slider\obj\Debug\UC_Slider.pdb

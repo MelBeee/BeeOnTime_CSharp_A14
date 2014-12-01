@@ -120,7 +120,6 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Quitter le programme
 Quitter le programme
-Quitter le programme
 Afficher l'aide
 Mois suivant
 Mois précédent 
@@ -129,6 +128,7 @@ Semaine précédent
 Zoom positif verticale
 Zoom négatif verticale
 Revenir à la semaine courante
-Aller à une date</value>
+Aller à une date
+Remettre thème de base</value>
   </data>
 </root>

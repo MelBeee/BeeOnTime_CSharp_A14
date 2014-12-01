@@ -39,10 +39,19 @@
       <Value Profile="(Default)">238, 238, 238</Value>
     </Setting>
     <Setting Name="DateFont" Type="System.Drawing.Font" Scope="User">
-      <Value Profile="(Default)">Lucida Console, 9pt</Value>
+      <Value Profile="(Default)">Lucida Console, 8pt</Value>
     </Setting>
     <Setting Name="MainFont" Type="System.Drawing.Font" Scope="User">
-      <Value Profile="(Default)">Papyrus, 11.25pt, style=Bold, Italic</Value>
+      <Value Profile="(Default)">Papyrus, 8pt, style=Bold, Italic</Value>
+    </Setting>
+    <Setting Name="ColorLignehorizontale" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="ColorLigneVerticale" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="ColorFont" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
     </Setting>
   </Settings>
 </SettingsFile>

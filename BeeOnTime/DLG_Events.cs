@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+///////////////////////////////////////////////////////////////////
+//
+//      Modifié par Xavier Brosseau et Melissa Boucher
+//
+///////////////////////////////////////////////////////////////////
+
 namespace Compact_Agenda
 {
     public partial class DLG_Events : Form
@@ -44,6 +50,7 @@ namespace Compact_Agenda
             }
         }
 
+        // Verifie si le text est plein pour enable ou disable les buttons
         public bool UpdateControls()
         {
             return (TBX_Description.Text == "" || TBX_Title.Text == "");
@@ -72,6 +79,7 @@ namespace Compact_Agenda
                 Event = new Event();
         }
 
+        // Trouve l'index de l'element selectionné
         private int TrouverIndex()
         {
             int index;
@@ -104,6 +112,7 @@ namespace Compact_Agenda
 
         private void TBX_Title_TextChanged(object sender, EventArgs e)
         {
+           
             if (UpdateControls())
             {
                 FB_Ajouter.Enabled = false;
@@ -116,6 +125,7 @@ namespace Compact_Agenda
 
         private void TBX_Description_TextChanged(object sender, EventArgs e)
         {
+           
             if (UpdateControls())
             {
                 FB_Ajouter.Enabled = false;
@@ -129,8 +139,8 @@ namespace Compact_Agenda
         private void FB_Ajouter_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
-            Event.Description = TBX_Description.Text;
             Event.Title = TBX_Title.Text;
+            Event.Description = TBX_Description.Text;
         }
 
         private void FB_Annuler_Click(object sender, EventArgs e)
